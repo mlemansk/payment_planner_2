@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_pmt_adjustment_from_loan/<%= pmt_adjustment.id %>">
-          Delete
-        </a>
+        <%if current_user == pmt_adjustment.user %>
+          <a href="/delete_pmt_adjustment_from_loan/<%= pmt_adjustment.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

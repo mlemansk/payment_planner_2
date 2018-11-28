@@ -13,17 +13,21 @@
 
       <!-- Edit link pmt_adjustment start -->
       <div class="col">
-        <a href="/pmt_adjustments/<%= @pmt_adjustment.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit pmt adjustment
-        </a>
+        <% if current_user == @pmt_adjustment.user %>
+          <a href="/pmt_adjustments/<%= @pmt_adjustment.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit pmt_adjustment
+          </a>
+        <% end %>
       </div>
       <!-- Edit link pmt_adjustment end -->
 
       <!-- Delete link pmt_adjustment start -->
       <div class="col">
-        <a href="/delete_pmt_adjustment/<%= @pmt_adjustment.id %>" class="btn btn-block btn-outline-secondary">
-          Delete pmt adjustment
-        </a>
+        <% if current_user == @pmt_adjustment.user %>
+          <a href="/delete_pmt_adjustment/<%= @pmt_adjustment.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete pmt_adjustment
+          </a>
+        <% end %>
       </div>
       <!-- Delete link pmt_adjustment end -->
     </div>
