@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/pmt_adjustments/new", { :controller => "pmt_adjustments", :action => "new_form" })
   post("/create_pmt_adjustment", { :controller => "pmt_adjustments", :action => "create_row" })
+  post("/create_pmt_adjustment_from_loan", { :controller => "pmt_adjustments", :action => "create_row_from_loan" })
 
   # READ
   get("/pmt_adjustments", { :controller => "pmt_adjustments", :action => "index" })

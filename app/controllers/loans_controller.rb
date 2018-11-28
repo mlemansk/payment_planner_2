@@ -6,6 +6,7 @@ class LoansController < ApplicationController
   end
 
   def show
+    @pmt_adjustment = PmtAdjustment.new
     @loan = Loan.find(params.fetch("id_to_display"))
 
     render("loan_templates/show.html.erb")

@@ -36,6 +36,25 @@ class PmtAdjustmentsController < ApplicationController
     end
   end
 
+  def create_row_from_loan
+    @pmt_adjustment = PmtAdjustment.new
+
+    @pmt_adjustment.payment_occurence = params.fetch("payment_occurence")
+    @pmt_adjustment.loan_id = params.fetch("loan_id")
+    @pmt_adjustment.user_id = params.fetch("user_id")
+    @pmt_adjustment.pmt_adjustment = params.fetch("pmt_adjustment")
+    @pmt_adjustment.beg_pay_adj = params.fetch("beg_pay_adj")
+    @pmt_adjustment.end_pay_adj = params.fetch("end_pay_adj")
+
+    if @pmt_adjustment.valid?
+      @pmt_adjustment.save
+
+      redirect_to("/loans/#{@pmt_adjustment.loan_id}", notice: "PmtAdjustment created successfully.")
+    else
+      render("pmt_adjustment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @pmt_adjustment = PmtAdjustment.find(params.fetch("prefill_with_id"))
 

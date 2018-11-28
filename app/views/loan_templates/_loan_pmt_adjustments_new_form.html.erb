@@ -1,0 +1,73 @@
+<!-- Form pmt_adjustment start -->
+<form action="/create_pmt_adjustment_from_loan" method="post">
+<!-- Form pmt_adjustment end -->
+
+  <!-- Label and input for payment_occurence start -->
+  <div class="form-group">
+    <label for="payment_occurence">
+      Payment occurence
+    </label>
+
+    <!-- Input for payment_occurence start -->
+    <input type="text" id="payment_occurence" name="payment_occurence" class="form-control" value="<%= @pmt_adjustment.payment_occurence %>">
+    <!-- Input for payment_occurence end -->
+  </div>
+  <!-- Label and input for payment_occurence end -->
+
+  <!-- Label and input for loan_id start -->
+  <!-- Input for loan_id start -->
+  <input type="hidden" name="loan_id" value="<%= @loan.id %>">
+  <!-- Input for loan_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @pmt_adjustment.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for pmt_adjustment start -->
+  <div class="form-group">
+    <label for="pmt_adjustment">
+      Pmt adjustment
+    </label>
+
+    <!-- Input for pmt_adjustment start -->
+    <input type="text" id="pmt_adjustment" name="pmt_adjustment" class="form-control" value="<%= @pmt_adjustment.pmt_adjustment %>">
+    <!-- Input for pmt_adjustment end -->
+  </div>
+  <!-- Label and input for pmt_adjustment end -->
+
+  <!-- Label and input for beg_pay_adj start -->
+  <div class="form-group">
+    <label for="beg_pay_adj">
+      Beg pay adj
+    </label>
+
+    <!-- Input for beg_pay_adj start -->
+    <input type="text" id="beg_pay_adj" name="beg_pay_adj" class="form-control" value="<%= @pmt_adjustment.beg_pay_adj %>">
+    <!-- Input for beg_pay_adj end -->
+  </div>
+  <!-- Label and input for beg_pay_adj end -->
+
+  <!-- Label and input for end_pay_adj start -->
+  <div class="form-group">
+    <label for="end_pay_adj">
+      End pay adj
+    </label>
+
+    <!-- Input for end_pay_adj start -->
+    <input type="text" id="end_pay_adj" name="end_pay_adj" class="form-control" value="<%= @pmt_adjustment.end_pay_adj %>">
+    <!-- Input for end_pay_adj end -->
+  </div>
+  <!-- Label and input for end_pay_adj end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create pmt adjustment
+  </button>
+</form>
