@@ -10,7 +10,8 @@ class LoansController < ApplicationController
   end
 
   def index
-    @loans = current_user.loans.page(params[:page]).per(10)
+    @q = current_user.loans.ransack(params[:q])
+    @loans = @q.result(:distinct => true).includes(:pmt_adjustments, :user).page(params[:page]).per(10)
 
     render("loan_templates/index.html.erb")
   end

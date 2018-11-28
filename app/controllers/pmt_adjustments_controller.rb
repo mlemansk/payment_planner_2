@@ -10,7 +10,8 @@ class PmtAdjustmentsController < ApplicationController
   end
 
   def index
-    @pmt_adjustments = current_user.pmt_adjustments.page(params[:page]).per(10)
+    @q = current_user.pmt_adjustments.ransack(params[:q])
+    @pmt_adjustments = @q.result(:distinct => true).includes(:loan, :user).page(params[:page]).per(10)
 
     render("pmt_adjustment_templates/index.html.erb")
   end
