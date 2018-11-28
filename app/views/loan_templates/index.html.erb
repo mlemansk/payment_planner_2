@@ -1,0 +1,122 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All loans
+    </h1>
+
+    <a href="/loans/new" class="btn btn-block btn-outline-secondary">
+      Add a new loan
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Current balance
+        </th>
+
+        <th>
+          Original amount
+        </th>
+
+        <th>
+          Interest rate
+        </th>
+
+        <th>
+          Periods in year
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @loans.each do |loan| %>
+      <tr>
+        <!-- Display loan.id start -->
+        <td>
+          <%= loan.id %>
+        </td>
+        <!-- Display loan.id end -->
+
+        <!-- Display loan.current_balance start -->
+        <td>
+          <%= loan.current_balance %>
+        </td>
+        <!-- Display loan.current_balance end -->
+
+        <!-- Display loan.original_amount start -->
+        <td>
+          <%= loan.original_amount %>
+        </td>
+        <!-- Display loan.original_amount end -->
+
+        <!-- Display loan.interest_rate start -->
+        <td>
+          <%= loan.interest_rate %>
+        </td>
+        <!-- Display loan.interest_rate end -->
+
+        <!-- Display loan.periods_in_year start -->
+        <td>
+          <%= loan.periods_in_year %>
+        </td>
+        <!-- Display loan.periods_in_year end -->
+
+        <!-- Display loan.user_id start -->
+        <td>
+          <%= loan.user_id %>
+        </td>
+        <!-- Display loan.user_id end -->
+
+        <!-- Display loan.created_at start -->
+        <td>
+          <%= time_ago_in_words(loan.created_at) %> ago
+        </td>
+        <!-- Display loan.created_at end -->
+
+        <!-- Display loan.updated_at start -->
+        <td>
+          <%= time_ago_in_words(loan.updated_at) %> ago
+        </td>
+        <!-- Display loan.updated_at end -->
+
+        <td>
+          <a href="/loans/<%= loan.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
