@@ -49,7 +49,7 @@ class LoansController < ApplicationController
     @loan.original_amount = params.fetch("original_amount")
     @loan.interest_rate = params.fetch("interest_rate")
     @loan.periods_in_year = params.fetch("periods_in_year")
-    @loan.user_id = params.fetch("user_id")
+    
 
     if @loan.valid?
       @loan.save
