@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "loans#index"
   devise_for :users
   # Routes for the User resource:
 
