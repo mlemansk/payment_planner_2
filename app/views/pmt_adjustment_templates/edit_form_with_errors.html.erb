@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @pmt_adjustment.errors.any? %>
   <% @pmt_adjustment.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,72 +12,48 @@
 
 <hr>
 
-<!-- Form pmt_adjustment start -->
 <form action="/update_pmt_adjustment/<%= @pmt_adjustment.id %>" method="post">
-<!-- Form pmt_adjustment end -->
 
-  <!-- Label and input for payment_occurence start -->
   <div class="form-group">
     <label for="payment_occurence">
       Payment occurence
     </label>
 
-    <!-- Input for payment_occurence start -->
     <input type="text" id="payment_occurence" name="payment_occurence" class="form-control" value="<%= @pmt_adjustment.payment_occurence %>">
-    <!-- Input for payment_occurence end -->
   </div>
-  <!-- Label and input for payment_occurence end -->
 
-  <!-- Label and input for loan_id start -->
   <div class="form-group">
     <label for="loan_id">
       Loan
     </label>
 
-    <!-- Input for loan_id start -->
     <%= select_tag(:loan_id, options_from_collection_for_select(Loan.all, :id, :current_balance, @pmt_adjustment.loan_id), :class => "form-control") %>
-    <!-- Input for loan_id end -->
   </div>
-  <!-- Label and input for loan_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for pmt_adjustment start -->
   <div class="form-group">
     <label for="pmt_adjustment">
       Pmt adjustment
     </label>
 
-    <!-- Input for pmt_adjustment start -->
     <input type="text" id="pmt_adjustment" name="pmt_adjustment" class="form-control" value="<%= @pmt_adjustment.pmt_adjustment %>">
-    <!-- Input for pmt_adjustment end -->
   </div>
-  <!-- Label and input for pmt_adjustment end -->
 
-  <!-- Label and input for beg_pay_adj start -->
   <div class="form-group">
     <label for="beg_pay_adj">
       Beg pay adj
     </label>
 
-    <!-- Input for beg_pay_adj start -->
     <input type="text" id="beg_pay_adj" name="beg_pay_adj" class="form-control" value="<%= @pmt_adjustment.beg_pay_adj %>">
-    <!-- Input for beg_pay_adj end -->
   </div>
-  <!-- Label and input for beg_pay_adj end -->
 
-  <!-- Label and input for end_pay_adj start -->
   <div class="form-group">
     <label for="end_pay_adj">
       End pay adj
     </label>
 
-    <!-- Input for end_pay_adj start -->
     <input type="text" id="end_pay_adj" name="end_pay_adj" class="form-control" value="<%= @pmt_adjustment.end_pay_adj %>">
-    <!-- Input for end_pay_adj end -->
   </div>
-  <!-- Label and input for end_pay_adj end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update pmt adjustment

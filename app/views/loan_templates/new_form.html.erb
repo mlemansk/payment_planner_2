@@ -5,63 +5,41 @@
 
 <hr>
 
-<!-- Form loan start -->
 <form action="/create_loan" method="post">
-<!-- Form loan end -->
 
-  <!-- Label and input for current_balance start -->
   <div class="form-group">
     <label for="current_balance">
       Current balance
     </label>
 
-    <!-- Input for current_balance start -->
     <input type="text" id="current_balance" name="current_balance" class="form-control">
-    <!-- Input for current_balance end -->
   </div>
-  <!-- Label and input for current_balance end -->
 
-  <!-- Label and input for original_amount start -->
   <div class="form-group">
     <label for="original_amount">
       Original amount
     </label>
 
-    <!-- Input for original_amount start -->
     <input type="text" id="original_amount" name="original_amount" class="form-control">
-    <!-- Input for original_amount end -->
   </div>
-  <!-- Label and input for original_amount end -->
 
-  <!-- Label and input for interest_rate start -->
   <div class="form-group">
     <label for="interest_rate">
       Interest rate
     </label>
 
-    <!-- Input for interest_rate start -->
     <input type="text" id="interest_rate" name="interest_rate" class="form-control">
-    <!-- Input for interest_rate end -->
   </div>
-  <!-- Label and input for interest_rate end -->
 
-  <!-- Label and input for periods_in_year start -->
   <div class="form-group">
     <label for="periods_in_year">
       Periods in year
     </label>
 
-    <!-- Input for periods_in_year start -->
     <input type="text" id="periods_in_year" name="periods_in_year" class="form-control">
-    <!-- Input for periods_in_year end -->
   </div>
-  <!-- Label and input for periods_in_year end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create loan

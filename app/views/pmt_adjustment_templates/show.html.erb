@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link pmt_adjustment start -->
       <div class="col">
         <% if current_user == @pmt_adjustment.user %>
           <a href="/pmt_adjustments/<%= @pmt_adjustment.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link pmt_adjustment end -->
 
-      <!-- Delete link pmt_adjustment start -->
       <div class="col">
         <% if current_user == @pmt_adjustment.user %>
           <a href="/delete_pmt_adjustment/<%= @pmt_adjustment.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link pmt_adjustment end -->
     </div>
 
     <dl>
       <dt>
         Payment occurence
       </dt>
-      <!-- Display payment_occurence start -->
       <dd>
         <%= @pmt_adjustment.payment_occurence %>
       </dd>
-      <!-- Display payment_occurence end -->
 
       <dt>
         Loan
       </dt>
-      <!-- Display loan_id start -->
       <dd>
         <% if @pmt_adjustment.loan.present? %>
           <a href="/loans/<%= @pmt_adjustment.loan_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display loan_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @pmt_adjustment.user.present? %>
           <a href="/users/<%= @pmt_adjustment.user_id %>">
@@ -66,55 +57,42 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Pmt adjustment
       </dt>
-      <!-- Display pmt_adjustment start -->
       <dd>
         <%= @pmt_adjustment.pmt_adjustment %>
       </dd>
-      <!-- Display pmt_adjustment end -->
 
       <dt>
         Beg pay adj
       </dt>
-      <!-- Display beg_pay_adj start -->
       <dd>
         <%= @pmt_adjustment.beg_pay_adj %>
       </dd>
-      <!-- Display beg_pay_adj end -->
 
       <dt>
         End pay adj
       </dt>
-      <!-- Display end_pay_adj start -->
       <dd>
         <%= @pmt_adjustment.end_pay_adj %>
       </dd>
-      <!-- Display end_pay_adj end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@pmt_adjustment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@pmt_adjustment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

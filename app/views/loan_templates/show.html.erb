@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link loan start -->
       <div class="col">
         <% if current_user == @loan.user %>
           <a href="/loans/<%= @loan.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link loan end -->
 
-      <!-- Delete link loan start -->
       <div class="col">
         <% if current_user == @loan.user %>
           <a href="/delete_loan/<%= @loan.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,50 +26,40 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link loan end -->
     </div>
 
     <dl>
       <dt>
         Current balance
       </dt>
-      <!-- Display current_balance start -->
       <dd>
         <%= @loan.current_balance %>
       </dd>
-      <!-- Display current_balance end -->
 
       <dt>
         Original amount
       </dt>
-      <!-- Display original_amount start -->
       <dd>
         <%= @loan.original_amount %>
       </dd>
-      <!-- Display original_amount end -->
 
       <dt>
         Interest rate
       </dt>
-      <!-- Display interest_rate start -->
       <dd>
         <%= @loan.interest_rate %>
       </dd>
-      <!-- Display interest_rate end -->
 
       <dt>
         Periods in year
       </dt>
-      <!-- Display periods_in_year start -->
       <dd>
         <%= @loan.periods_in_year %>
       </dd>
-      <!-- Display periods_in_year end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @loan.user.present? %>
           <a href="/users/<%= @loan.user_id %>">
@@ -80,33 +67,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@loan.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@loan.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "loan_templates/loan_pmt_adjustments" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

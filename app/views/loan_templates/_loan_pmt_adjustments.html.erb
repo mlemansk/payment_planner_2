@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @loan.pmt_adjustments.each do |pmt_adjustment| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/pmt_adjustments/<%= pmt_adjustment.id %>">
           <%= pmt_adjustment.payment_occurence %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == pmt_adjustment.user %>
           <a href="/delete_pmt_adjustment_from_loan/<%= pmt_adjustment.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="loan_pmt_adjustments_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "loan_templates/loan_pmt_adjustments_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
