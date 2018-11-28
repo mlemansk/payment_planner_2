@@ -61,6 +61,22 @@ class PmtAdjustmentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_loan
+    @pmt_adjustment = PmtAdjustment.find(params.fetch("id_to_remove"))
+
+    @pmt_adjustment.destroy
+
+    redirect_to("/loans/#{@pmt_adjustment.loan_id}", notice: "PmtAdjustment deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @pmt_adjustment = PmtAdjustment.find(params.fetch("id_to_remove"))
+
+    @pmt_adjustment.destroy
+
+    redirect_to("/users/#{@pmt_adjustment.user_id}", notice: "PmtAdjustment deleted successfully.")
+  end
+
   def destroy_row
     @pmt_adjustment = PmtAdjustment.find(params.fetch("id_to_remove"))
 

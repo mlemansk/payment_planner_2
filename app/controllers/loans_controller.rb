@@ -59,6 +59,14 @@ class LoansController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @loan = Loan.find(params.fetch("id_to_remove"))
+
+    @loan.destroy
+
+    redirect_to("/users/#{@loan.user_id}", notice: "Loan deleted successfully.")
+  end
+
   def destroy_row
     @loan = Loan.find(params.fetch("id_to_remove"))
 

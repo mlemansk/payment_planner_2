@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Pmt Adjustments
+
+    <a data-toggle="collapse" href="#user_pmt_adjustments_new_form">
+      Add pmt adjustment
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.pmt_adjustments.each do |pmt_adjustment| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/pmt_adjustments/<%= pmt_adjustment.id %>">
+          <%= pmt_adjustment.payment_occurence %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

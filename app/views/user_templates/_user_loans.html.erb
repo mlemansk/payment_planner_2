@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Loans
+
+    <a data-toggle="collapse" href="#user_loans_new_form">
+      Add loan
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.loans.each do |loan| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/loans/<%= loan.id %>">
+          <%= loan.current_balance %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

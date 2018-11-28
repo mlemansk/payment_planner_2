@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_pmt_adjustment/:id_to_remove", { :controller => "pmt_adjustments", :action => "destroy_row" })
+  get("/delete_pmt_adjustment_from_user/:id_to_remove", { :controller => "pmt_adjustments", :action => "destroy_row_from_user" })
+  get("/delete_pmt_adjustment_from_loan/:id_to_remove", { :controller => "pmt_adjustments", :action => "destroy_row_from_loan" })
 
   #------------------------------
 
@@ -46,6 +48,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_loan/:id_to_remove", { :controller => "loans", :action => "destroy_row" })
+  get("/delete_loan_from_user/:id_to_remove", { :controller => "loans", :action => "destroy_row_from_user" })
 
   #------------------------------
 
