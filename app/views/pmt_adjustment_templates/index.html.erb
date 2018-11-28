@@ -80,13 +80,21 @@
 
         <!-- Display pmt_adjustment.loan_id start -->
         <td>
-          <%= pmt_adjustment.loan.current_balance %>
+          <% if pmt_adjustment.loan.present? %>
+            <a href="/loans/<%= pmt_adjustment.loan.id %>">
+              <%= pmt_adjustment.loan.current_balance %>
+            </a>
+          <% end %>
         </td>
         <!-- Display pmt_adjustment.loan_id end -->
 
         <!-- Display pmt_adjustment.user_id start -->
         <td>
-          <%= pmt_adjustment.user.email %>
+          <% if pmt_adjustment.user.present? %>
+            <a href="/users/<%= pmt_adjustment.user.id %>">
+              <%= pmt_adjustment.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display pmt_adjustment.user_id end -->
 

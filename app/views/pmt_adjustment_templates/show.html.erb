@@ -47,7 +47,11 @@
       </dt>
       <!-- Display loan_id start -->
       <dd>
-        <%= @pmt_adjustment.loan_id %>
+        <% if @pmt_adjustment.loan.present? %>
+          <a href="/loans/<%= @pmt_adjustment.loan_id %>">
+            <%= @pmt_adjustment.loan.current_balance %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display loan_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @pmt_adjustment.user_id %>
+        <% if @pmt_adjustment.user.present? %>
+          <a href="/users/<%= @pmt_adjustment.user_id %>">
+            <%= @pmt_adjustment.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

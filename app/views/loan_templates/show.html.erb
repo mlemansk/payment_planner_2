@@ -74,7 +74,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @loan.user_id %>
+        <% if @loan.user.present? %>
+          <a href="/users/<%= @loan.user_id %>">
+            <%= @loan.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
