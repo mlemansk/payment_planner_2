@@ -66,7 +66,7 @@ class PmtAdjustmentsController < ApplicationController
 
     @pmt_adjustment.payment_occurence = params.fetch("payment_occurence")
     @pmt_adjustment.loan_id = params.fetch("loan_id")
-    @pmt_adjustment.user_id = params.fetch("user_id")
+    
     @pmt_adjustment.pmt_adjustment = params.fetch("pmt_adjustment")
     @pmt_adjustment.beg_pay_adj = params.fetch("beg_pay_adj")
     @pmt_adjustment.end_pay_adj = params.fetch("end_pay_adj")
