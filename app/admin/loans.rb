@@ -1,4 +1,6 @@
 ActiveAdmin.register Loan do
+
+ permit_params :current_balance, :original_amount, :interest_rate, :periods_in_year, :user_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
