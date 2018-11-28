@@ -13,17 +13,21 @@
 
       <!-- Edit link loan start -->
       <div class="col">
-        <a href="/loans/<%= @loan.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit loan
-        </a>
+        <% if current_user == @loan.user %>
+          <a href="/loans/<%= @loan.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit loan
+          </a>
+        <% end %>
       </div>
       <!-- Edit link loan end -->
 
       <!-- Delete link loan start -->
       <div class="col">
-        <a href="/delete_loan/<%= @loan.id %>" class="btn btn-block btn-outline-secondary">
-          Delete loan
-        </a>
+        <% if current_user == @loan.user %>
+          <a href="/delete_loan/<%= @loan.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete loan
+          </a>
+        <% end %>
       </div>
       <!-- Delete link loan end -->
     </div>
