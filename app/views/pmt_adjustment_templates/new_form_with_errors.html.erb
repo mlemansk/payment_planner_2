@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for loan_id start -->
-    <input type="text" id="loan_id" name="loan_id" class="form-control" value="<%= @pmt_adjustment.loan_id %>">
+    <%= select_tag(:loan_id, options_from_collection_for_select(Loan.all, :id, :current_balance, @pmt_adjustment.loan_id), :class => "form-control") %>
     <!-- Input for loan_id end -->
   </div>
   <!-- Label and input for loan_id end -->
