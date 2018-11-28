@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :loans,
+             :dependent => :destroy
+
   has_many   :pmt_adjustments,
              :dependent => :destroy
 
